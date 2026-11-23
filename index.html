@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive live weather dashboard with a five-day forecast.">
+  <title>SkyCast | Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SkyCast home"><span class="brand-mark">S</span> SkyCast</a>
+      <span class="live-tag"><span></span> LIVE WEATHER</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR WEATHER, AT A GLANCE</p>
+      <h1>Weather Dashboard</h1>
+      <p class="subtitle">Find current conditions and the five-day outlook for any city.</p>
+    </section>
+
+    <form id="search-form" class="search-form" novalidate>
+      <label class="sr-only" for="city-input">Enter a city name</label>
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input id="city-input" type="text" placeholder="Search a city, e.g. Tirupati" autocomplete="off" maxlength="80">
+      <button id="search-button" type="submit">Search <span aria-hidden="true">→</span></button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite">Search for a city to see its weather.</p>
+
+    <section id="weather-content" class="weather-content" hidden>
+      <article class="current-card">
+        <div class="current-top">
+          <div>
+            <p class="card-label">CURRENT WEATHER</p>
+            <h2 id="city-name">—</h2>
+            <p id="current-date" class="muted">—</p>
+          </div>
+          <div id="current-symbol" class="weather-symbol" aria-hidden="true">☀</div>
+        </div>
+        <div class="temperature-row">
+          <p id="temperature" class="temperature">—°</p>
+          <div>
+            <p id="condition" class="condition">—</p>
+            <p class="muted">Temperature</p>
+          </div>
+        </div>
+        <div class="current-footer">
+          <span>Local time zone</span>
+          <strong id="timezone">—</strong>
+        </div>
+      </article>
+
+      <section class="forecast-section">
+        <div class="section-heading">
+          <div>
+            <p class="card-label">PLAN AHEAD</p>
+            <h2>5-Day Forecast</h2>
+          </div>
+          <span class="forecast-note">Daily high &amp; low</span>
+        </div>
+        <div id="forecast-grid" class="forecast-grid"></div>
+      </section>
+    </section>
+
+    <footer>Weather data provided by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>.</footer>
+  </main>
+</body>
+</html>
